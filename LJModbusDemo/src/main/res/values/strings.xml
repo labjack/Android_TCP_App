@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LJModbusDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="_192_168_1_209">192.168.1.209</string>
+    <string name="ip_address">IP Address</string>
+    <string name="action">Action</string>
+    <string name="port">Port</string>
+    <string name="_502">502</string>
+    <string name="tcp_connection">TCP Connection</string>
+    <string name="modbus">Modbus</string>
+    <string name="address">Address</string>
+    <string name="value">Value</string>
+    <string name="read">Read</string>
+    <string name="write">Write</string>
+    <string name="data_type">Data Type</string>
+    <string name="_0">0</string>
+    <string name="additional_messages">Additional Messages</string>
+
+    <string-array name="data_type">
+        <item>UINT16</item>
+        <item>INT32</item>
+        <item>UINT32</item>
+        <item>FLOAT32</item>
+    </string-array>
+</resources>

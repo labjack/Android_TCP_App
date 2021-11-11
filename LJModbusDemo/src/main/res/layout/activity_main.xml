@@ -1,0 +1,172 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:layout_margin="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true" >
+    
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tcp_connection"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/ipAddrEText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:digits="0123456789."
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/_192_168_1_209"
+        android:width="175dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/ip_address" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/portEText"
+        android:layout_marginTop="10dp"
+        android:text="@string/modbus"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ipAddrEText"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="10dp"
+        android:text="@string/address" />
+
+    <EditText
+        android:id="@+id/mAddrEText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/_0"
+        android:width="100dp" />
+
+    <Spinner
+        android:id="@+id/mTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:layout_toLeftOf="@+id/writeButton"
+        android:entries="@array/data_type" />
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/mTypeSpinner"
+        android:minLines="5"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:text="@string/additional_messages" />
+
+    <EditText
+        android:id="@+id/mValueEText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView5"
+        android:layout_toRightOf="@+id/mAddrEText"
+        android:ems="10"
+        android:inputType="numberDecimal|numberSigned"
+        android:text="@string/_0" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mAddrEText"
+        android:layout_below="@+id/mAddrEText"
+        android:text="@string/data_type" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mAddrEText"
+        android:layout_alignLeft="@+id/mValueEText"
+        android:text="@string/value" />
+
+    <EditText
+        android:id="@+id/portEText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ipAddrEText"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/ipAddrEText"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/_502" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/portEText"
+        android:layout_alignLeft="@+id/portEText"
+        android:text="@string/port" />
+
+    <Button
+        android:id="@+id/ReadButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/writeButton"
+        android:layout_alignBottom="@+id/writeButton"
+        android:layout_alignParentRight="true"
+        android:onClick="readClick"
+        android:text="@string/read"
+        android:width="75dp" />
+
+    <Button
+        android:id="@+id/writeButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mValueEText"
+        android:layout_toLeftOf="@+id/ReadButton"
+        android:onClick="writeClick"
+        android:text="@string/write"
+        android:width="75dp" />
+
+</RelativeLayout>
+
+</ScrollView>
