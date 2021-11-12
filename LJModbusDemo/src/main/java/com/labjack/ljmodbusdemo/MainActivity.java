@@ -182,6 +182,10 @@ public class MainActivity extends Activity {
 					
 					//Setup the Modbus request  
 					WriteMultipleRegistersRequest writeReq = new WriteMultipleRegistersRequest(mAddr, regs);
+					//The data length consists of 7 bytes for this function plus the data bytes
+					//The jamod library sets data length to whatever you pass +2 (so subtract 2 from actual)
+					writeReq.setDataLength(5+bytes.length);
+					writeReq.setUnitID(1);
 	
 					outStr = "Modbus request bytes (hex): " + writeReq.getHexMessage();
 					
