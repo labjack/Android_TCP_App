@@ -28,17 +28,16 @@ This package contains an app and its source code demonstrating Modbus over TCP c
 
 ## Modbus:
 
-Detailed Modbus information can be found [here](https://labjack.com/support/software/api/modbus)
+Detailed Modbus information can be found [here](https://labjack.com/support/software/api/modbus).
 
 The [Modbus Map](https://labjack.com/support/software/api/modbus/modbus-map) provides Modbus addresses, data types and read/write information. Addresses map to a LabJack device's sensor, setting, or configuration.
 
 
 ## Source code:
 
-The app's source code is in the LJModbusDemo folder. It is set up as a Android Studio project that uses Gradle to build.
+The app's source code is in the LJModbusDemo folder. It is set up as a Android Studio project that uses Gradle to build. The project was updated to use a target SDK API 30 and minimum required SDK API 9. To build the project, be sure to include a `local.properties` file in the project root directory defining `sdk.dir` as the path to your Android SDK. For example:
+`sdk.dir=C\:\\path\\to\\Android\\Sdk`
 
-The project was updated to use a target SDK API 30 and minimum required SDK API 9.
-
-TCP and Modbus operations are implemented using the third party jamod library, which is included in the LJModbusDemo\libs folder. jamod copyright and license information can be found in its [download](http://jamod.sourceforge.net)
+TCP and Modbus operations are implemented using the third party jamod library, which is included in the LJModbusDemo\libs folder. jamod copyright and license information can be found in its [download](http://jamod.sourceforge.net).
 
 LabJack provided source code is licensed under MIT X11. The license can be found in the LICENSE.txt file.
